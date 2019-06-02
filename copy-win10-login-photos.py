@@ -2,6 +2,7 @@
 
 import os
 import datetime
+import subprocess
 from shutil import copyfile
 from PIL import Image
 
@@ -64,8 +65,10 @@ def copy_assets():
         
     for file in files_to_remove:
         os.remove(file)
-        
-    
+
+    subprocess.call(["explorer", WALLPAPER_DIR])
+    subprocess.call(["explorer", TEMP_ASSET_DIR])
+
 if __name__ == "__main__":
     copy_assets()
     
